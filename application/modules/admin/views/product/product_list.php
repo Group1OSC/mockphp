@@ -4,7 +4,7 @@
 
     <thead>
         <tr>
-            <th></th>
+            <th>Featured</th>
             <th>ID</th>
             <th>Name</th>
             <th>List Price</th>
@@ -80,7 +80,7 @@
     $(document).ready(function() {
         $('#data-table').dataTable({
             
-            "sort" : false,
+            "sort" : true,
             "pageLength": <?php echo isset($per_page) ? $per_page : "5"; ?>,            
             "iDisplayLength" : 5,
 

@@ -86,7 +86,7 @@
                 
              </div>
              <?php
-                if($total_product==0) echo "<center><h3>You had n't bought a product, please shopping now! </h3></center>";
+                if($total_product==0) echo "<center><h3>You hadn't bought a product, please shopping now! </h3></center>";
                      
              ?>
                 <div class="col-sm-6" style="float:right; display:inline-block; ">
@@ -121,6 +121,6 @@
             </form>
 	</div>
 </div>
-        
+<br/>       
         
 		

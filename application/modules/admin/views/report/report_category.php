@@ -39,6 +39,7 @@
 
 <?php 
 if(isset($cates) && count($cates) > 0) {
+    $order = 0;
 ?>
 
 <!-- result table -->
@@ -49,21 +50,22 @@ if(isset($cates) && count($cates) > 0) {
             <th>ID</th>
             <th>Category Name</th>
             <th>Number of Purchasing</th>
-            <th>Products Quantity</th>
             <th>Level</th>
         </tr>
     </thead>
     <tbody>
     <?php 
         foreach ($cates as $cate) {
-            echo "<tr>";
-            echo "<td>{$cate['order']}</td>";
-                echo "<td>{$cate['cate_id']}</td>";
-                echo "<td>{$cate['cate_name']}</td>";
-                echo "<td>{$cate['count']}</td>";
-                echo "<td>{$cate['quantity']}</td>";
-                echo "<td>{$cate['cate_level']}</td>";
-            echo "</tr>";
+            if($cate['count'] != 0){
+                $order++;
+                echo "<tr>";
+                echo "<td>$order</td>";
+                    echo "<td>{$cate['cate_id']}</td>";
+                    echo "<td>{$cate['cate_name']}</td>";
+                    echo "<td>{$cate['count']}</td>";
+                    echo "<td>{$cate['cate_level']}</td>";
+                echo "</tr>";
+            }
         }
     ?>
     </tbody>

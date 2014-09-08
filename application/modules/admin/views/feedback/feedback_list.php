@@ -20,10 +20,10 @@
         foreach ($feedbacks as $feedback) {
             echo "<tr>";
                 echo "<td><a target='_blank' href='" . base_url() . "default/home/detail/" . $feedback['pro_id'] . "'>{$feedback['pro_name']}</a></td>";
-                echo "<td>{$feedback['feedback_name']}</td>";
+                echo "<td>" . htmlentities($feedback['feedback_name']) . "</td>";
                 echo "<td>{$feedback['feedback_email']}</td>";
                 echo "<td>{$feedback['feedback_rate']}/5</td>";
-                echo "<td>{$feedback['feedback_content']}</td>";
+                echo "<td>" . htmlentities($feedback['feedback_content']) . "</td>";
                 echo "<td>{$feedback['feedback_time']}</td>";     
                 echo '<td><a class="btn btn-success" href="' . base_url(). 'admin/feedback/approve/' . $feedback['feedback_id'] . '">Approve</a></td>';
                 echo "<td><a class='btn btn-danger' href='" . base_url(). 'admin/feedback/disapprove/' . $feedback['feedback_id'] . "' onclick='if(checkDelete() == false) return false' />Disapprove</a></td>";

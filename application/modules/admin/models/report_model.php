@@ -24,7 +24,7 @@ class Report_model extends CI_Model{
 
 	public function category($fromDate, $toDate){
 		$sql = 
-		"SELECT cate.cate_id, count(cate.cate_id) as count, cate.cate_name, SUM(od.quantity) as quantity, cate.cate_level
+		"SELECT cate.cate_id, count(cate.cate_id) as count, cate.cate_name, cate.cate_level, cate.cate_parent
 		FROM (
 			(SELECT * FROM tbl_order WHERE order_time >= '$fromDate' AND order_time <= '$toDate' AND order_status = 1) AS o
 			LEFT JOIN tbl_order_detail AS od ON od.order_id = o.order_id

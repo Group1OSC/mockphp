@@ -100,13 +100,13 @@
 						$time = $feedback_time->format('h:i:s A');
 				?>
 					<ul>
-						<li><a><i class="fa fa-user"></i><?php echo $feedback['feedback_name'] ?></a></li>
+						<li><a><i class="fa fa-user"></i><?php echo htmlentities($feedback['feedback_name']) ?></a></li>
 						<li><a><i class="fa fa-clock-o"></i><?php echo $time ?></a></li>
 						<li><a><i class="fa fa-calendar-o"></i><?php echo $date ?></a></li>
 					</ul>
 					<div class="rate" data-average="<?php echo $feedback['feedback_rate']; ?>"></div>
 					<br>
-					<p><?php echo $feedback['feedback_content'] ?></p>
+					<p><?php echo htmlentities($feedback['feedback_content']) ?></p>
 					<hr>
 				<?php
 					}
